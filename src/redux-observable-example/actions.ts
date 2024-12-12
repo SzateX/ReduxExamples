@@ -1,18 +1,18 @@
-interface LoadCurrencyDataAction {
+export interface LoadCurrencyDataAction {
   type: 'LOAD_CURRENCY_DATA';
   payload: {
     tableType: string;
   };
 }
 
-interface LoadCurrencyDataSuccessAction {
+export interface LoadCurrencyDataSuccessAction {
   type: 'LOAD_CURRENCY_DATA_SUCCESS';
   payload: {
     data: any;
   };
 }
 
-interface LoadCurrencyDataErrorAction {
+export interface LoadCurrencyDataErrorAction {
   type: 'LOAD_CURRENCY_DATA_ERROR';
   error: any;
 }

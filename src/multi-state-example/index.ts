@@ -4,10 +4,11 @@ store.subscribe(() => {
   console.log(store.getState());
 })
 
-store.dispatch({type: "TURN_ON"});
+store.dispatch({type: "LOAD_CURRENCY_DATA"});
 
-store.dispatch({type: "TURN_OFF"});
+store.dispatch({type: "LOAD_CURRENCY_DATA_SUCCESS", payload: {data: "some data"}});
 
-store.dispatch({type: "TURN_ON"});
+store.dispatch({type: "LOAD_CURRENCY_DATA"});
 
-store.dispatch({type: "TURN_OFF"});
+store.dispatch({type: "LOAD_CURRENCY_DATA_ERROR", error: "some error"});
+

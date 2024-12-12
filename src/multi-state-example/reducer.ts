@@ -1,25 +1,37 @@
 import {Action} from "./actions";
 
 export interface State {
-  lightTurnedOn: boolean;
+  loading: boolean;
+  error: string | null;
+  data: any | null;
 }
 
 export const initialState: State = {
-  lightTurnedOn: false,
+  loading: false,
+  error: null,
+  data: null,
 };
 
 
 export function reducer(state: State = initialState, action: Action): State {
   switch (action.type) {
-    case 'TURN_ON':
+    case "LOAD_CURRENCY_DATA":
       return {
-        ...state,
-        lightTurnedOn: true,
+        loading: true,
+        error: null,
+        data: null,
       };
-    case 'TURN_OFF':
+    case "LOAD_CURRENCY_DATA_SUCCESS":
       return {
-        ...state,
-        lightTurnedOn: false,
+        loading: false,
+        error: null,
+        data: action.payload,
+      };
+    case "LOAD_CURRENCY_DATA_ERROR":
+      return {
+        loading: false,
+        error: action.error,
+        data: null,
       };
     default:
       return state;

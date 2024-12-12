@@ -1,9 +1,20 @@
-interface TurnOnAction {
-  type: 'TURN_ON';
+interface LoadCurrencyDataAction {
+  type: 'LOAD_CURRENCY_DATA';
+  payload: {
+    tableType: string;
+  };
 }
 
-interface TurnOffAction {
-  type: 'TURN_OFF';
+interface LoadCurrencyDataSuccessAction {
+  type: 'LOAD_CURRENCY_DATA_SUCCESS';
+  payload: {
+    data: any;
+  };
 }
 
-export type Action = TurnOnAction | TurnOffAction;
+interface LoadCurrencyDataErrorAction {
+  type: 'LOAD_CURRENCY_DATA_ERROR';
+  error: any;
+}
+
+export type Action = LoadCurrencyDataAction | LoadCurrencyDataSuccessAction | LoadCurrencyDataErrorAction;

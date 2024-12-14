@@ -19,7 +19,5 @@ export function reducer(state: State = initialState, action: Action): State {
       return {
         lightTurnedOn: false,
       };
-    default:
-      return state;
   }
 }

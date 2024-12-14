@@ -13,12 +13,10 @@ export function reducer(state: State = initialState, action: Action): State {
   switch (action.type) {
     case 'TURN_ON':
       return {
-        ...state,
         lightTurnedOn: true,
       };
     case 'TURN_OFF':
       return {
-        ...state,
         lightTurnedOn: false,
       };
     default:
